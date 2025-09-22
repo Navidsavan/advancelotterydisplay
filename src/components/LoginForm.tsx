@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import InputField from "./InputField";
 import { validateForm, type ValidationErrors } from "../utils/validation";
+import { useNavigate } from "react-router-dom"; 
 
 interface LoginFormProps {
   onSwitchToRegister: () => void;
@@ -17,6 +18,8 @@ const LoginForm: React.FC<LoginFormProps> = ({
   const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState<ValidationErrors>({});
 
+  const navigate = useNavigate(); // 👈 Hook for navigation
+
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     const newErrors = validateForm(email, password);
@@ -25,6 +28,7 @@ const LoginForm: React.FC<LoginFormProps> = ({
     if (Object.keys(newErrors).length === 0) {
       console.log("Login submitted:", { email, password });
       // TODO: API call + navigation
+      navigate("/dashboard");
     }
   };
 
