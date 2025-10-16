@@ -7,7 +7,7 @@
 }
 
 * {
-  box-sizing: border-box
+  box-sizing: border-box;
 }
 
 html,
@@ -31,7 +31,7 @@ body {
   padding: 0 20px;
 }
 
-/* NAVBAR */
+/* ===================== NAVBAR ===================== */
 .navbar {
   position: sticky;
   top: 0;
@@ -41,15 +41,28 @@ body {
   border-bottom: 1px solid #eee;
 }
 
+/* fixed navbar height and spacing */
 .navbar-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 0;
+  height: 70px; /* fixed height */
+  padding: 0 0px;
 }
 
+/* brand logo and tagline */
 .brand {
-  cursor: pointer
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.brand-logo {
+  max-height: 200px; /* limit logo height */
+  width: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .brand-sub {
@@ -72,16 +85,22 @@ body {
   padding: 8px 10px;
   font-size: 14px;
   color: inherit;
+  transition: color 0.2s ease;
 }
 
 .link-btn:hover {
-  color: var(--accent)
+  color: var(--accent);
 }
 
 .nav-contact {
   font-size: 14px;
   color: var(--muted);
   text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-contact:hover {
+  color: var(--accent);
 }
 
 .cta {
@@ -91,13 +110,14 @@ body {
   padding: 8px 14px;
   border-radius: 8px;
   cursor: pointer;
+  transition: opacity 0.2s ease;
 }
 
 .cta:hover {
-  opacity: 0.95
+  opacity: 0.95;
 }
 
-/* mobile */
+/* ===================== MOBILE NAV ===================== */
 .mobile-toggle {
   display: none;
   background: transparent;
@@ -111,7 +131,7 @@ body {
   width: 22px;
   height: 2px;
   background: #333;
-  position: relative
+  position: relative;
 }
 
 .hamburger:after,
@@ -121,18 +141,18 @@ body {
   left: 0;
   right: 0;
   height: 2px;
-  background: #333
+  background: #333;
 }
 
 .hamburger:before {
-  top: -7px
+  top: -7px;
 }
 
 .hamburger:after {
-  bottom: -7px
+  bottom: -7px;
 }
 
-/* HERO */
+/* ===================== HERO ===================== */
 .hero {
   padding: 60px 0;
 }
@@ -144,42 +164,42 @@ body {
 }
 
 .hero-left {
-  flex: 1
+  flex: 1;
 }
 
 .hero-right {
   flex: 1;
   display: flex;
-  justify-content: center
+  justify-content: center;
 }
 
 h1 {
   font-size: 34px;
-  margin: 0 0 12px
+  margin: 0 0 12px;
 }
 
 .muted {
   color: var(--muted);
   font-weight: 600;
-  font-size: 18px
+  font-size: 18px;
 }
 
 .lead {
   color: var(--muted);
-  margin: 12px 0 18px
+  margin: 12px 0 18px;
 }
 
 .hero-actions .btn {
-  margin-right: 12px
+  margin-right: 12px;
 }
 
-/* mockup */
+/* ===================== MOCKUP ===================== */
 .mockup {
   width: 320px;
   border-radius: 12px;
   border: 1px solid #e6eaf0;
   box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
-  overflow: hidden
+  overflow: hidden;
 }
 
 .screen-header {
@@ -187,43 +207,43 @@ h1 {
   color: #fff;
   padding: 8px;
   font-weight: 700;
-  font-size: 12px
+  font-size: 12px;
 }
 
 .screen-body {
   padding: 28px;
   text-align: center;
-  background: linear-gradient(180deg, #fff, #f6fbff)
+  background: linear-gradient(180deg, #fff, #f6fbff);
 }
 
 .numbers {
   font-size: 28px;
-  font-weight: 700
+  font-weight: 700;
 }
 
 .meta {
   color: var(--muted);
-  margin-top: 8px
+  margin-top: 8px;
 }
 
-/* sections */
+/* ===================== SECTIONS ===================== */
 .section {
-  padding: 64px 0
+  padding: 64px 0;
 }
 
 .alt {
-  background: #fbfdff
+  background: #fbfdff;
 }
 
 .section-sub {
   color: var(--muted);
-  margin-bottom: 18px
+  margin-bottom: 18px;
 }
 
-/* grids & cards */
+/* ===================== GRIDS & CARDS ===================== */
 .grid {
   display: grid;
-  gap: 18px
+  gap: 18px;
 }
 
 .feature-grid {
@@ -235,31 +255,31 @@ h1 {
   background: var(--card);
   border-radius: var(--radius);
   padding: 18px;
-  box-shadow: 0 6px 16px rgba(16, 24, 40, 0.04)
+  box-shadow: 0 6px 16px rgba(16, 24, 40, 0.04);
 }
 
 .solutions-grid {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  margin-top: 18px
+  margin-top: 18px;
 }
 
 .pricing-grid {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  margin-top: 18px
+  margin-top: 18px;
 }
 
 .pricing-card .price {
   font-size: 20px;
   font-weight: 700;
-  margin: 12px 0
+  margin: 12px 0;
 }
 
-/* partner */
+/* ===================== PARTNER ===================== */
 .partner-cta {
   display: flex;
   gap: 12px;
   justify-content: center;
-  margin-top: 14px
+  margin-top: 14px;
 }
 
 .btn {
@@ -270,45 +290,44 @@ h1 {
   text-decoration: none;
   display: inline-block;
   border: none;
-  cursor: pointer
+  cursor: pointer;
 }
 
 .btn.ghost,
 .ghost {
   background: transparent;
   border: 1px solid #dbeafe;
-  color: var(--accent)
+  color: var(--accent);
 }
 
-/* FOOTER */
+/* ===================== FOOTER ===================== */
 .footer {
   border-top: 1px solid #f0f0f0;
   padding: 18px 0;
-  margin-top: 30px
+  margin-top: 30px;
 }
 
 .footer-inner {
   display: flex;
   justify-content: space-between;
-  align-items: center
+  align-items: center;
 }
 
 .footer-bottom {
   padding: 12px 0;
   color: var(--muted);
   text-align: center;
-  font-size: 13px
+  font-size: 13px;
 }
 
-/* responsive */
+/* ===================== RESPONSIVE ===================== */
 @media (max-width: 880px) {
   .hero-inner {
-    flex-direction: column
+    flex-direction: column;
   }
 
   .nav-links {
     position: fixed;
-    inset: 0 auto 0 0;
     top: 0;
     right: -100%;
     width: 260px;
@@ -316,24 +335,29 @@ h1 {
     flex-direction: column;
     padding: 80px 18px;
     background: #fff;
-    transition: right .25s ease;
-    box-shadow: -8px 0 30px rgba(0, 0, 0, 0.06)
+    transition: right 0.25s ease;
+    box-shadow: -8px 0 30px rgba(0, 0, 0, 0.06);
   }
 
   .nav-links.open {
-    right: 0
+    right: 0;
   }
 
   .mobile-toggle {
-    display: block
+    display: block;
   }
 
   .nav-contact {
     display: block;
-    margin-top: 8px
+    margin-top: 8px;
   }
 
   .navbar-inner {
-    gap: 10px
+    height: 60px;
+    gap: 10px;
+  }
+
+  .brand-logo {
+    max-height: 100px;
   }
 }

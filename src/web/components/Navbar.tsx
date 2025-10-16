@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // ✅ import router navigation
+import logo from "../../assets/logo.png"
 
 const sections = [
   { id: "features", label: "Features" },
@@ -14,13 +16,21 @@ function scrollToId(id: string) {
 
 const Navbar: React.FC = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const navigate = useNavigate(); // ✅ hook for navigation
 
   return (
     <header className="navbar">
       <div className="container navbar-inner">
-        <div className="brand" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-          <strong>Lottery Display</strong>
-          <span className="brand-sub">Digital Lottery Display Technology</span>
+        <div
+          className="brand"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
+          <img
+            src={logo}
+            alt="Lottery Display Logo"
+            className="brand-logo"
+            style={{ height: 250, objectFit: "contain" }}
+          />
         </div>
 
         <nav className={`nav-links ${mobileOpen ? "open" : ""}`}>
@@ -38,20 +48,26 @@ const Navbar: React.FC = () => {
             </button>
           ))}
 
-          <a className="link-btn" href="#login" onClick={() => setMobileOpen(false)}>
+          {/* ✅ Navigate to login route */}
+          <button
+            className="link-btn"
+            onClick={() => {
+              navigate("/login");
+              setMobileOpen(false);
+            }}
+          >
             Login
+          </button>
+
+          <a className="nav-contact" href="tel:+923130547655">
+            Call Us +92 03130547655
           </a>
 
-          <a className="nav-contact" href="tel:+15127889042">
-            Call Us +1 (512) 788-9042
-          </a>
-
+          {/* ✅ Get Started → navigate to /login */}
           <button
             className="cta"
             onClick={() => {
-              // example: open signup modal or navigate
-              // here it scrolls to partner section as "Get Started" entrypoint
-              scrollToId("partner");
+              navigate("/login");
               setMobileOpen(false);
             }}
           >
@@ -59,6 +75,7 @@ const Navbar: React.FC = () => {
           </button>
         </nav>
 
+        {/* Mobile toggle */}
         <button
           className="mobile-toggle"
           aria-label="Toggle navigation"
