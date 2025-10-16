@@ -14,26 +14,31 @@ html,
 body,
 #root {
   height: 100%;
+  width: 100%; /* ✅ Added to ensure full width coverage */
   margin: 0;
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
 
-body {
-  background: var(--bg);
-  color: #111;
-  scroll-behavior: smooth;
+/* Ensure main container covers full viewport */
+.container {
+  width: 100%; /* ✅ Added to stretch full width */
+  max-width: 100%; /* ✅ Prevents constraining layout */
+  height: 100%; /* ✅ Ensures full height */
+  margin: 0;
+  padding: 0 20px;
 }
 
-/* layout */
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 20px;
+/* Optional: make sections fill screen vertically if needed */
+.section {
+  min-height: 100vh; /* ✅ Makes each section fill the screen height */
+  padding: 6px 0;
 }
 
 /* ===================== NAVBAR ===================== */
 .navbar {
-  position: sticky;
+  position: fixed;
+  width: 100%;
+  left: 0;
   top: 0;
   z-index: 40;
   background: rgba(255, 255, 255, 0.9);
@@ -46,8 +51,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 70px; /* fixed height */
+  height: 75px; /* fixed height */
   padding: 0 0px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 /* brand logo and tagline */

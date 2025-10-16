@@ -1,12 +1,14 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // ✅ import router navigation
-import logo from "../../assets/logo.png"
+import { useNavigate } from "react-router-dom";
+import logo from "../../assets/logo.png";
+import '../styles/Navbar.css';
+
 
 const sections = [
   { id: "features", label: "Features" },
   { id: "solutions", label: "Solutions" },
   { id: "pricing", label: "Pricing" },
-  { id: "partner", label: "Become a partner" },
+  { id: "partner", label: "Become a Partner" },
 ];
 
 function scrollToId(id: string) {
@@ -16,24 +18,21 @@ function scrollToId(id: string) {
 
 const Navbar: React.FC = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const navigate = useNavigate(); // ✅ hook for navigation
+  const navigate = useNavigate();
 
   return (
     <header className="navbar">
-      <div className="container navbar-inner">
+      <div className="navbar-inner">
+        {/* Left: Logo */}
         <div
           className="brand"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
-          <img
-            src={logo}
-            alt="Lottery Display Logo"
-            className="brand-logo"
-            style={{ height: 250, objectFit: "contain" }}
-          />
+          <img src={logo} alt="Lottery Display Logo" className="brand-logo" />
         </div>
 
-        <nav className={`nav-links ${mobileOpen ? "open" : ""}`}>
+        {/* Center: Navigation */}
+        <nav className={`nav-center ${mobileOpen ? "open" : ""}`}>
           {sections.map((s) => (
             <button
               key={s.id}
@@ -42,13 +41,18 @@ const Navbar: React.FC = () => {
                 scrollToId(s.id);
                 setMobileOpen(false);
               }}
-              aria-label={`Scroll to ${s.label}`}
             >
               {s.label}
             </button>
           ))}
+        </nav>
 
-          {/* ✅ Navigate to login route */}
+        {/* Right: Contact + Buttons */}
+        <div className="nav-right">
+          <a className="nav-contact" href="tel:+923130547655">
+            📞 +92 313 0547655
+          </a>
+
           <button
             className="link-btn"
             onClick={() => {
@@ -59,11 +63,6 @@ const Navbar: React.FC = () => {
             Login
           </button>
 
-          <a className="nav-contact" href="tel:+923130547655">
-            Call Us +92 03130547655
-          </a>
-
-          {/* ✅ Get Started → navigate to /login */}
           <button
             className="cta"
             onClick={() => {
@@ -73,13 +72,13 @@ const Navbar: React.FC = () => {
           >
             Get Started
           </button>
-        </nav>
+        </div>
 
-        {/* Mobile toggle */}
+        {/* Mobile Toggle */}
         <button
           className="mobile-toggle"
           aria-label="Toggle navigation"
-          onClick={() => setMobileOpen((s) => !s)}
+          onClick={() => setMobileOpen((prev) => !prev)}
         >
           <span className="hamburger" />
         </button>

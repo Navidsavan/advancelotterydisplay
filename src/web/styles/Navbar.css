@@ -1,0 +1,163 @@
+/* 🌟 Navbar Base */
+.navbar {
+    position: fixed; /* stays on top even when scrolling */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    padding: 12px 40px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    z-index: 9999;
+  }
+  
+  .navbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+  
+  /* 🌟 Brand */
+  .brand {
+    flex: 1;
+    cursor: pointer;
+  }
+  
+  .brand-logo {
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  /* 🌟 Center & Right Navigation */
+  .nav-center {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+  }
+  
+  .nav-right {
+    flex: 1.5;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  /* 🌟 Links & Buttons */
+  .link-btn {
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  
+  .link-btn:hover {
+    color: #2f95dc;
+  }
+  
+  .nav-contact {
+    text-decoration: none;
+    color: #2f95dc;
+    font-weight: 600;
+  }
+  
+/* ✨ Stable, premium Get Started button */
+.cta {
+    background: linear-gradient(90deg, #2f95dc 0%, #1b75bb 100%);
+    color: #fff;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 3px 8px rgba(47, 149, 220, 0.25);
+  }
+  
+  .cta:hover {
+    background: linear-gradient(90deg, #1b75bb 0%, #2f95dc 100%);
+    box-shadow: 0 0 15px rgba(47, 149, 220, 0.45);
+  }
+  
+  /* 🌟 Mobile Toggle (Clean Version) */
+  .mobile-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    position: relative;
+  }
+  
+  /* ✅ 3 Clear Hamburger Lines */
+  .hamburger {
+    position: relative;
+    width: 24px;
+    height: 2px;
+    background-color: #333;
+    border-radius: 2px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  .hamburger::before,
+  .hamburger::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background-color: #333;
+    border-radius: 2px;
+  }
+  
+  .hamburger::before {
+    transform: translateY(-8px);
+  }
+  
+  .hamburger::after {
+    transform: translateY(8px);
+  }
+  
+  /* 🌟 Mobile Responsive */
+  @media (max-width: 900px) {
+    .nav-center,
+    .nav-right {
+      display: none;
+    }
+  
+    .nav-center.open {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #fff;
+      position: absolute;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px 0;
+      gap: 16px;
+    }
+  
+    .mobile-toggle {
+      display: flex;
+    }
+  }
+  
+  /* 🌟 Prevent content hiding under navbar */
+  body {
+    padding-top: 100px;
+  }
+  

@@ -1,40 +1,18 @@
 import React from "react";
+import "../styles/Hero.css";
 
 const Hero: React.FC = () => {
   return (
-    <section className="hero">
-      <div className="container hero-inner">
-        <div className="hero-left">
-          <h1>
-            Lottery Display <br />
-            <span className="muted">Digital Lottery Display Technology</span>
-          </h1>
-
-          <p className="lead">
-            Revolutionize your lottery halls and kiosks with real-time number updates, dynamic
-            ad scheduling, and enterprise-grade remote management.
-          </p>
-
-          <div className="hero-actions">
-            <a className="btn" onClick={() => document.getElementById("features")?.scrollIntoView({ behavior: "smooth" })}>
-              Features
-            </a>
-            <a className="btn ghost" onClick={() => document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })}>
-              Pricing
-            </a>
-          </div>
-        </div>
-
-        <div className="hero-right" aria-hidden>
-          {/* placeholder for product image / mockup */}
-          <div className="mockup">
-            <div className="screen-header">LIVE DISPLAY</div>
-            <div className="screen-body">
-              <div className="numbers">12 - 34 - 56</div>
-              <div className="meta">Next draw: 12:00 PM</div>
-            </div>
-          </div>
-        </div>
+    <section className="hero-section">
+      <div className="hero-content">
+        <h1 className="hero-title">
+          Empowering the <span>Digital World</span> through Innovative Digital Display Solutions
+        </h1>
+        <p className="hero-subtitle">
+          If you’re part of <span>Digital Technologies</span>, you’re already shaping the <span>Digital World</span>. 
+          Bring the future to your screens with real-time lottery and advertisement updates, immersive visuals, 
+          and next-level engagement that boost your brand’s presence and performance.
+        </p>
       </div>
     </section>
   );
