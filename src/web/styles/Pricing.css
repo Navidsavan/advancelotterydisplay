@@ -1,13 +1,14 @@
-.features-section {
-  /* background: linear-gradient(120deg, #1e085a, #073768, #024854); */
+/* ===================== PRICING SECTION ===================== */
+.pricing-section {
   padding: 80px;
   position: relative;
   overflow: hidden;
   border-radius: 5px;
   animation: fadeWave 1.5s ease-out forwards;
+  width: 100%;
 }
 
-/* 🌊 Section fade-in wave animation */
+/* Reuse the same fade-in animation */
 @keyframes fadeWave {
   0% {
     opacity: 0;
@@ -23,26 +24,26 @@
   }
 }
 
-.features-container {
+/* ===================== CONTAINER & TITLES ===================== */
+.pricing-container {
   width: 100%;
   margin: 0 auto;
   text-align: center;
-  color: #faf6f6;
+  color: #000;
   background-color: #ffffff;
   padding: 0 20px;
 }
 
-.features-title {
+.pricing-title {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 10px;
-  color: #000000;
+  color: #000;
   text-transform: uppercase;
   letter-spacing: 1px;
   animation: waveTitle 1s ease forwards;
 }
 
-/* Title wave-in animation */
 @keyframes waveTitle {
   0% {
     opacity: 0;
@@ -54,15 +55,14 @@
   }
 }
 
-.features-subtitle {
+.pricing-subtitle {
   font-size: 1.1rem;
-  opacity: 0.8;
-  color: #000000;
+  opacity: 0.85;
+  color: #000;
   margin-bottom: 40px;
   animation: fadeUp 1.2s ease forwards;
 }
 
-/* Subtle fade-up for subtitle */
 @keyframes fadeUp {
   0% {
     opacity: 0;
@@ -74,27 +74,29 @@
   }
 }
 
-.features-grid {
+/* ===================== GRID & CARDS ===================== */
+.pricing-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 25px;
+  justify-items: center; /* ✅ centers cards in all grid layouts */
 }
 
-/* 🌊 Feature cards animated wave sequence */
-.feature-card {
+.pricing-card {
   background: linear-gradient(120deg, #1e085a, #073768, #024854);
-  padding: 30px 20px;
+  padding: 35px 25px;
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.15);
-  position: relative;
   transition: transform 0.4s ease, box-shadow 0.3s ease;
-  /* clip-path: polygon(8% 0, 100% 0, 92% 100%, 0% 100%); */
   opacity: 0;
   transform: translateY(40px);
   animation: cardWave 1s ease-out forwards;
+  width: 100%;
+  max-width: 340px; /* ✅ keep consistent width across breakpoints */
+  color: #fff;
 }
 
-/* Wave-in animation for each feature card */
+/* Card animation */
 @keyframes cardWave {
   0% {
     opacity: 0;
@@ -110,40 +112,29 @@
   }
 }
 
-/* Delayed wave pattern for each card */
-.feature-card:nth-child(1) {
-  animation-delay: 0.2s;
-}
-.feature-card:nth-child(2) {
-  animation-delay: 0.4s;
-}
-.feature-card:nth-child(3) {
-  animation-delay: 0.6s;
-}
-.feature-card:nth-child(4) {
-  animation-delay: 0.8s;
-}
-
-.feature-card:hover {
+/* Hover effect */
+.pricing-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
   background: linear-gradient(120deg, #2e117e, #07529d, #025f70);
 }
 
+/* ===================== ICONS ===================== */
 .icon-wrapper {
   background: linear-gradient(135deg, #43cea2, #185a9d);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 64px;
-  height: 64px;
+  width: 68px;
+  height: 68px;
   border-radius: 14px;
   margin-bottom: 15px;
   transform: skew(-8deg);
   animation: iconPop 0.8s ease-out forwards;
+  font-size: 2rem;
+  color: #fff;
 }
 
-/* Icon pop animation */
 @keyframes iconPop {
   0% {
     transform: scale(0.6) rotate(-10deg) skew(-8deg);
@@ -155,14 +146,78 @@
   }
 }
 
-.feature-card h3 {
-  font-size: 1.3rem;
+/* ===================== TEXT & BUTTON ===================== */
+.pricing-card h3 {
+  font-size: 1.4rem;
   font-weight: 600;
-  margin: 10px 0;
+  margin: 15px 0 10px;
 }
 
-.feature-card p {
+.price {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #faf6f6;
+}
+
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 25px;
+}
+
+.pricing-card ul li {
+  margin-bottom: 8px;
   font-size: 0.95rem;
-  opacity: 0.85;
-  line-height: 1.5;
+  opacity: 0.9;
+}
+
+.pricing-card .btn {
+  background: linear-gradient(135deg, #43cea2, #185a9d);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pricing-card .btn:hover {
+  background: linear-gradient(135deg, #52e4b5, #1463b2);
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 768px) {
+  .pricing-section {
+    padding: 60px 20px;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .pricing-card {
+    width: 90%;
+    max-width: 350px;
+  }
+
+  .pricing-title {
+    font-size: 2rem;
+  }
+
+  .pricing-subtitle {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pricing-card {
+    padding: 25px 15px;
+  }
+
+  .pricing-card h3 {
+    font-size: 1.2rem;
+  }
 }

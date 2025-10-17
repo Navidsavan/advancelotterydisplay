@@ -13,6 +13,16 @@ const Hero: React.FC = () => {
           Bring the future to your screens with real-time lottery and advertisement updates, immersive visuals, 
           and next-level engagement that boost your brand’s presence and performance.
         </p>
+
+        {/* Contact Us Button */}
+        <div className="hero-btn-container">
+          <button
+            className="hero-btn"
+            onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+          >
+            Contact Us
+          </button>
+        </div>
       </div>
     </section>
   );

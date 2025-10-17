@@ -1,21 +1,60 @@
 import React from "react";
+import { FaStore, FaCogs, FaBuilding } from "react-icons/fa";
+import "../styles/Pricing.css";
 
 const plans = [
-  { id: "basic", name: "Basic", price: "$29/mo", bullets: ["Single site", "Basic support", "Core display features"] },
-  { id: "pro", name: "Pro", price: "$79/mo", bullets: ["Multi-site", "Priority support", "Advanced scheduling"] },
-  { id: "enterprise", name: "Enterprise", price: "Custom", bullets: ["SLA & onboarding", "Dedicated account", "Custom integrations"] },
+  {
+    id: "basic",
+    name: "Basic",
+    price: "$29/mo",
+    icon: <FaStore />,
+    bullets: [
+      "Single site support",
+      "Basic monitoring",
+      "Core display features",
+    ],
+  },
+  {
+    id: "pro",
+    name: "Pro",
+    price: "$79/mo",
+    icon: <FaCogs />,
+    bullets: [
+      "Multi-site control",
+      "Priority support",
+      "Advanced scheduling",
+    ],
+  },
+  {
+    id: "enterprise",
+    name: "Enterprise",
+    price: "Custom",
+    icon: <FaBuilding />,
+    bullets: [
+      "SLA & onboarding",
+      "Dedicated account",
+      "Custom integrations",
+    ],
+  },
 ];
 
 const Pricing: React.FC = () => {
   return (
-    <section id="pricing" className="section">
-      <div className="container">
-        <h2>Pricing</h2>
-        <p className="section-sub">Scalable plans for single stores to nationwide deployments.</p>
+    <section id="pricing" className="pricing-section">
+      <div className="pricing-container">
+        <h2 className="pricing-title">Pricing</h2>
+        <p className="pricing-subtitle">
+          Scalable plans for single stores to nationwide deployments.
+        </p>
 
-        <div className="grid pricing-grid">
-          {plans.map((p) => (
-            <div key={p.id} className="card pricing-card">
+        <div className="pricing-grid">
+          {plans.map((p, i) => (
+            <div
+              key={p.id}
+              className="pricing-card"
+              style={{ animationDelay: `${0.2 * i}s` }}
+            >
+              <div className="icon-wrapper">{p.icon}</div>
               <h3>{p.name}</h3>
               <p className="price">{p.price}</p>
               <ul>

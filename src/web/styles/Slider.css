@@ -1,47 +1,61 @@
 .world-slider {
-    /* width: 100%; */
-    overflow: hidden;
-    position: relative;
-    background: linear-gradient(90deg, #390094, #124588, #025165);
-    padding: 20px 0;
-    margin-top: 50px;
-    margin-bottom: 30px;
-  }
-  
-  .slider-wrapper {
-    width: 100%;
-    overflow: hidden;
-    padding: 10px;
-  }
-  
-  .slider-track {
-    display: flex;
-    width: 200%;
-    align-items: center; /* ✅ keeps all slides vertically aligned */
-  }
-  
-  .slide {
-    flex: 0 0 auto;
-    width: 20%;
-    padding: 0 10px;
-  }
-  
+  width: 100vw; /* ✅ Forces section to match full viewport width */
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(90deg, #390094, #124588, #025165);
+  padding: 20px 0;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw; /* ✅ Centers the 100vw section */
+  margin-right: -50vw;
+}
+
+/* Wrapper holds the track */
+.slider-wrapper {
+  width: 100%;
+  overflow: hidden;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Continuous track for animation */
+.slider-track {
+  display: flex;
+  width: 200%; /* ✅ Needed for seamless infinite scroll look */
+  align-items: center;
+  will-change: transform;
+}
+
+/* Individual slide */
+.slide {
+  flex: 0 0 auto;
+  width: 20%;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.slide img {
+  width: 100%;
+  aspect-ratio: 12 / 9;
+  object-fit: cover;
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+.slide img:hover {
+  transform: scale(1.05);
+}
+
+/* ✅ Mobile adjustment */
+@media (max-width: 868px) {
   .slide img {
-    width: 100%;
-    aspect-ratio: 12 / 9; /* ✅ ensures same proportion on all screen sizes */
-    object-fit: cover;
-    border-radius: 16px;
-    transition: transform 0.3s ease;
+    aspect-ratio: 4 / 3;
   }
-  
-  .slide img:hover {
-    transform: scale(1.05);
-  }
-  
-  /* ✅ Optional: fine-tune for small screens */
-  @media (max-width: 868px) {
-    .slide img {
-      aspect-ratio: 4 / 3; /* Slightly taller ratio on small devices */
-    }
-  }
-  
+}
+
+/* ✅ Global overflow prevention */
+html, body {
+  overflow-x: hidden; /* removes any horizontal scroll due to vw */
+}

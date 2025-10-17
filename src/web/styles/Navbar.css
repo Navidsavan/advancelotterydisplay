@@ -68,7 +68,7 @@
   
 /* ✨ Stable, premium Get Started button */
 .cta {
-    background: linear-gradient(90deg, #2f95dc 0%, #1b75bb 100%);
+    background: linear-gradient(135deg, #43cea2, #185a9d);
     color: #fff;
     border: none;
     padding: 10px 22px;
@@ -81,7 +81,7 @@
   }
   
   .cta:hover {
-    background: linear-gradient(90deg, #1b75bb 0%, #2f95dc 100%);
+    background: linear-gradient(135deg, #52e8b9, #1d72c7);
     box-shadow: 0 0 15px rgba(47, 149, 220, 0.45);
   }
   

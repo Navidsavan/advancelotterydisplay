@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/Partner.css"; // ✅ Import the custom CSS
 
 const Partner: React.FC = () => {
   return (
