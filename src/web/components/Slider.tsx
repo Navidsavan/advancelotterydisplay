@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import "../styles/WorldSlider.css";
+import "../styles/Slider.css";
 import slide1 from "../assets/slide1.webp";
 import slide2 from "../assets/slide2.webp";
 import slide3 from "../assets/slide3.webp";
@@ -9,7 +9,7 @@ import slide5 from "../assets/slide5.webp";
 
 const images = [slide1, slide2, slide3, slide4, slide5];
 
-const WorldSlider: React.FC = () => {
+const Slider: React.FC = () => {
   return (
     <section className="world-slider">
       <div className="slider-wrapper">
@@ -33,4 +33,4 @@ const WorldSlider: React.FC = () => {
   );
 };
 
-export default WorldSlider;
+export default Slider;

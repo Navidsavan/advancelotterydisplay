@@ -1,0 +1,165 @@
+.features-section {
+  background: linear-gradient(120deg, #1e085a, #073768, #024854);
+  padding: 80px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+  animation: fadeWave 1.5s ease-out forwards;
+}
+
+/* 🌊 Section fade-in wave animation */
+@keyframes fadeWave {
+  0% {
+    opacity: 0;
+    transform: translateY(60px) skewY(3deg);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateY(20px) skewY(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) skewY(0);
+  }
+}
+
+.features-container {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+  padding: 0 20px;
+}
+
+.features-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: waveTitle 1s ease forwards;
+}
+
+/* Title wave-in animation */
+@keyframes waveTitle {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.features-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  margin-bottom: 40px;
+  animation: fadeUp 1.2s ease forwards;
+}
+
+/* Subtle fade-up for subtitle */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+/* 🌊 Feature cards animated wave sequence */
+.feature-card {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 30px 20px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  position: relative;
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+  clip-path: polygon(8% 0, 100% 0, 92% 100%, 0% 100%);
+  opacity: 0;
+  transform: translateY(40px);
+  animation: cardWave 1s ease-out forwards;
+}
+
+/* Wave-in animation for each feature card */
+@keyframes cardWave {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) skewY(4deg);
+  }
+  60% {
+    opacity: 0.7;
+    transform: translateY(-10px) skewY(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Delayed wave pattern for each card */
+.feature-card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.feature-card:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.feature-card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.feature-card:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.icon-wrapper {
+  background: linear-gradient(135deg, #43cea2, #185a9d);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  margin-bottom: 15px;
+  transform: skew(-8deg);
+  animation: iconPop 0.8s ease-out forwards;
+}
+
+/* Icon pop animation */
+@keyframes iconPop {
+  0% {
+    transform: scale(0.6) rotate(-10deg) skew(-8deg);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) rotate(0deg) skew(-8deg);
+    opacity: 1;
+  }
+}
+
+.feature-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  line-height: 1.5;
+}

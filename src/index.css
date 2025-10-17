@@ -19,19 +19,32 @@ body,
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
 
-/* Ensure main container covers full viewport */
-.container {
-  width: 100%; /* ✅ Added to stretch full width */
-  max-width: 100%; /* ✅ Prevents constraining layout */
-  height: 100%; /* ✅ Ensures full height */
+/* ===================== GLOBAL SECTION FULL-WIDTH ===================== */
+
+/* Every section covers full viewport width */
+.section {
+  width: 100vw; /* full screen width */
+  position: relative;
+  overflow: hidden;
+  padding: 80px 0; /* top-bottom spacing */
   margin: 0;
-  padding: 0 20px;
 }
 
-/* Optional: make sections fill screen vertically if needed */
-.section {
-  min-height: 100vh; /* ✅ Makes each section fill the screen height */
-  padding: 6px 0;
+/* Make sure containers don't restrict layout */
+.container {
+  width: 100%;
+  max-width: 1400px; /* keeps text readable */
+  margin: 0 auto;
+  padding: 0 60px; /* space inside */
+}
+
+/* Remove any max-width restriction that prevents backgrounds from spanning */
+.section.alt,
+.features-section,
+.world-slider {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  position: relative;
 }
 
 /* ===================== NAVBAR ===================== */
@@ -118,6 +131,13 @@ body,
   border-radius: 8px;
   cursor: pointer;
   transition: opacity 0.2s ease;
+}
+.slider {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
 .cta:hover {

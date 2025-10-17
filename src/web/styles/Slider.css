@@ -1,5 +1,5 @@
 .world-slider {
-    width: 100%;
+    /* width: 100%; */
     overflow: hidden;
     position: relative;
     background: linear-gradient(90deg, #390094, #124588, #025165);

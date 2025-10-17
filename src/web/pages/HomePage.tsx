@@ -6,7 +6,7 @@ import Solutions from "../components/Solutions";
 import Pricing from "../components/Pricing";
 import Partner from "../components/Partner";
 import Footer from "../components/Footer";
-import WorldSlider from "../components/WorldSlider";
+import Slider from "../components/Slider";
 
 
 const HomePage: React.FC = () => {
@@ -15,7 +15,7 @@ const HomePage: React.FC = () => {
       <Navbar />
       <main>
         <Hero />
-        <WorldSlider/>
+        <Slider/>
         <Features />
         <Solutions />
         <Pricing />
