@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import LoginPage from "../lottery-app/pages/LoginPage";
-import Dashboard from "../lottery-app/pages/Dashboard";
+import LoginPage from "../lotteryApp/pages/LoginPage";
+import Dashboard from "../lotteryApp/pages/Dashboard";
 import HomePage from "../web/pages/HomePage";
 
 
@@ -16,9 +16,9 @@ const Routers =()=> {
         </nav> */}
         {/* Page Routes */}
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<Dashboard />} />
+          <Route path="home/" element={<HomePage />} />
           <Route path="login" element={<LoginPage />} />
-          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </div>
     </Router>
