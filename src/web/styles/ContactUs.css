@@ -1,0 +1,153 @@
+.contact-section {
+    width: 100vw; /* full viewport width */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw; /* removes page padding */
+    margin-right: -50vw;
+    background: linear-gradient(180deg, #f2f6fa 0%, #ffffff 100%);
+    padding: 80px 30px;
+    border-radius: 0;
+    box-shadow: none;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    animation: fadeIn 1.2s ease-out forwards;
+  }
+  
+  
+  .contact-container {
+    width: 100vw;
+    max-width: 900px;
+    background: #fff;
+    padding: 50px;
+    border-radius: 30px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  }
+  
+  .contact-title {
+    font-size: 2.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #2f95dc, #43cea2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .input-row {
+
+    gap: 20px;
+  }
+  
+  .form-group {
+    background: #f8f8f8;
+    padding: 20px;
+    border-radius: 20px;
+  }
+  
+  .question {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 15px;
+    color: #111;
+  }
+  
+  .yes-no-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .yes-no-btn {
+    flex: 1;
+    border: none;
+    padding: 14px 0;
+    border-radius: 40px;
+    background: #e2e2e2;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .yes-no-btn.active {
+    background: linear-gradient(90deg, #2f95dc, #43cea2);
+    color: white;
+    transform: scale(1.03);
+  }
+  
+  .state-dropdown {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  
+  .checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 12px;
+  }
+  
+  .checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .message-box {
+    width: 100%;
+    height: 120px;
+    padding: 14px;
+    border-radius: 16px;
+    border: 1px solid #ccc;
+    resize: none;
+    font-size: 1rem;
+  }
+  
+  .submit-btn {
+    width: 100%;
+    background: linear-gradient(90deg, #2f95dc, #43cea2);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 16px;
+    border-radius: 40px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(47, 149, 220, 0.3);
+  }
+  .contact-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    flex-wrap: wrap;
+  }
+  
+  .contact-container {
+    flex: 1;
+    min-width: 360px;
+  }
+  
+ 

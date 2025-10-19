@@ -1,11 +1,15 @@
 /* ===================== PRICING SECTION ===================== */
 .pricing-section {
-  padding: 80px;
+  background: linear-gradient(180deg, #f2f6fa 0%, #ffffff 100%);
+  padding: 80px 20px;
   position: relative;
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: 0; /* Changed from 10px to remove rounded corners */
   animation: fadeWave 1.5s ease-out forwards;
-  width: 100%;
+  width: 100vw; /* Full viewport width */
+  margin-left: calc(-50vw + 50%); /* Center alignment trick for full width */
+  left: 0;
+  right: 0;
 }
 
 /* Reuse the same fade-in animation */
@@ -27,21 +31,22 @@
 /* ===================== CONTAINER & TITLES ===================== */
 .pricing-container {
   width: 100%;
+  max-width: 1200px; /* Optional: limit content width but keep background full */
   margin: 0 auto;
   text-align: center;
   color: #000;
-  background-color: #ffffff;
-  padding: 0 20px;
+  padding: 0 50px;
 }
 
 .pricing-title {
-  font-size: 2.5rem;
+  font-size: 2.6rem;
   font-weight: 700;
-  margin-bottom: 10px;
-  color: #000;
   text-transform: uppercase;
   letter-spacing: 1px;
-  animation: waveTitle 1s ease forwards;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #2f95dc, #43cea2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 @keyframes waveTitle {
@@ -79,11 +84,11 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 25px;
-  justify-items: center; /* ✅ centers cards in all grid layouts */
+  justify-items: center;
+  width: 100%;
 }
 
 .pricing-card {
-  background: linear-gradient(120deg, #1e085a, #073768, #024854);
   padding: 35px 25px;
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -92,8 +97,9 @@
   transform: translateY(40px);
   animation: cardWave 1s ease-out forwards;
   width: 100%;
-  max-width: 340px; /* ✅ keep consistent width across breakpoints */
-  color: #fff;
+  max-width: 340px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  background: #ffffff;
 }
 
 /* Card animation */
@@ -116,7 +122,7 @@
 .pricing-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-  background: linear-gradient(120deg, #2e117e, #07529d, #025f70);
+  background: #ffffff;
 }
 
 /* ===================== ICONS ===================== */
@@ -157,7 +163,7 @@
   font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 20px;
-  color: #faf6f6;
+  color: #000000;
 }
 
 .pricing-card ul {
@@ -190,7 +196,7 @@
 /* ===================== RESPONSIVE ===================== */
 @media (max-width: 768px) {
   .pricing-section {
-    padding: 60px 20px;
+    padding: 60px 0; /* Remove horizontal padding for mobile too */
   }
 
   .pricing-grid {
@@ -219,5 +225,9 @@
 
   .pricing-card h3 {
     font-size: 1.2rem;
+  }
+  
+  .pricing-container {
+    padding: 0 15px; /* Slightly less padding on very small screens */
   }
 }

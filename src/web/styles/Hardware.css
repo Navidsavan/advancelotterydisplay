@@ -1,0 +1,158 @@
+/* 🌟 Force Full Width Section */
+.hardware-section {
+    width: 100vw; /* full viewport width */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    top: 40px;
+    bottom: 40px;
+    margin-left: -50vw; /* removes page padding */
+    margin-right: -50vw;
+    background: linear-gradient(180deg, #f2f6fa 0%, #ffffff 100%);
+    padding: 80px 90px;
+    border-radius: 0;
+    box-shadow: none;
+    animation: fadeIn 1.2s ease-out forwards;
+  }
+  
+  /* 🌟 Inner Container */
+  .hardware-inner {
+    max-width: 1300px;
+    margin: 0 auto;
+    text-align: center;
+    color: #111;
+  }
+  
+  /* 🌟 Titles */
+  .hardware-title {
+    font-size: 2.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #2f95dc, #43cea2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .hardware-subtitle {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 60px;
+    opacity: 0.85;
+  }
+  
+  /* 🌟 Grid */
+  .hardware-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 40px;
+    justify-content: center;
+  }
+  
+  /* 🌟 Card */
+  .hardware-card {
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 20px;
+    padding: 30px 25px;
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+  }
+  
+  .hardware-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
+  }
+  
+ /* 🌟 Image */
+.hardware-image-wrap {
+    border-radius: 14px;
+    overflow: hidden;
+    margin: 0 auto 20px auto; /* center image horizontally */
+    width: fit-content; /* shrink wrapper to image size */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hardware-image {
+    width: 45%; /* reduced size */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* center image inside wrapper */
+    transition: transform 0.4s ease;
+  }
+  
+  .hardware-card:hover .hardware-image {
+    transform: scale(1.05);
+  }
+  
+  /* 🌟 Headings */
+  .hardware-card h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #0a0a0a;
+  }
+  
+  .hardware-card h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 20px;
+    color: #2f95dc;
+  }
+  
+  /* 🌟 Text */
+  .hardware-card p {
+    color: #333;
+    font-size: 0.96rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+  
+  /* 🌟 Brand List */
+  .brand-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
+  }
+  
+  .brand-list li {
+    background: linear-gradient(90deg, #2f95dc, #43cea2);
+    color: #fff;
+    padding: 6px 14px;
+    margin: 6px 6px 6px 0;
+    border-radius: 10px;
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background 0.3s ease;
+  }
+  
+  .brand-list li:hover {
+    background: linear-gradient(90deg, #43cea2, #2f95dc);
+  }
+  
+  /* 🌟 Support */
+  .support-number {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2f95dc;
+    margin-top: 8px;
+  }
+  
+  /* 🌟 Animation */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

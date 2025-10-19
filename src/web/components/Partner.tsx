@@ -19,6 +19,7 @@ const Partner: React.FC = () => {
           </a>
         </div>
       </div>
+     
     </section>
   );
 };

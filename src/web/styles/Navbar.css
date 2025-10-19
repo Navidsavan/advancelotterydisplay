@@ -57,7 +57,10 @@
   }
   
   .link-btn:hover {
-    color: #2f95dc;
+
+    background: linear-gradient(90deg, #2f95dc, #43cea2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   
   .nav-contact {

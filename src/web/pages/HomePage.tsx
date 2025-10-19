@@ -7,6 +7,8 @@ import Pricing from "../components/Pricing";
 import Partner from "../components/Partner";
 import Footer from "../components/Footer";
 import Slider from "../components/Slider";
+import Hardware from "../components/Hardware";
+import ContactUs from "../components/ContactUs";
 
 
 const HomePage: React.FC = () => {
@@ -19,6 +21,8 @@ const HomePage: React.FC = () => {
         <Features />
         <Solutions />
         <Pricing />
+        <Hardware/>
+        <ContactUs/>
         <Partner />
       </main>
       <Footer />
